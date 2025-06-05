@@ -22,6 +22,6 @@ icons.forEach(icon => {
         timeout = setTimeout(() => {
             p.innerText = p.dataset.original;
             p.style.opacity = '1';
-        }, 300);
+        }, 200);
     });
 });
