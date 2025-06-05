@@ -45,7 +45,7 @@ cards.forEach(card => {
     });
 
     // Clique → abre URL
-    icon.addEventListener('click', () => {
+    card.addEventListener('click', () => {
         if (input.checked && p.innerText === "Ver") {
             const url = icon.dataset.url;
             window.open(url, '_blank');
