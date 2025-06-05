@@ -187,6 +187,7 @@ button:hover{
 
 .projects{
     margin-top: 10vh;
+    margin-bottom: 10vh;
     gap: 50px;
     display: flex;
     flex-direction: column;
@@ -243,7 +244,7 @@ button:hover{
     justify-content: center;
     overflow: hidden;
     height: 80px;
-    width: 520px;
+    width: 500px;
     opacity: 0;
     transform: translateY(30px);
     transition-delay: .3s;
