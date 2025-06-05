@@ -1,3 +1,4 @@
+//Mudar o icone dos cards com o hover
 const icons = document.querySelectorAll('.icon');
 
 icons.forEach(icon => {
@@ -16,7 +17,14 @@ icons.forEach(icon => {
             timeout = setTimeout(() => {
                 p.innerText = "Ler";
                 p.style.opacity = '1';
-            }, 300);
+            }, 200);
+        }
+    });
+
+    icon.addEventListener('click', () => {
+        if (p.innerText === "Ler") {
+            const url = icon.dataset.url;
+            window.open(url, '_blank');
         }
     });
 
@@ -31,7 +39,7 @@ icons.forEach(icon => {
             timeout = setTimeout(() => {
                 p.innerText = p.dataset.original;
                 p.style.opacity = '1';
-            }, 300);
+            }, 200);
         }
     });
 });
