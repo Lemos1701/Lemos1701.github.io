@@ -1,45 +1,54 @@
-//Mudar o icone dos cards com o hover
-const icons = document.querySelectorAll('.icon');
+const cards = document.querySelectorAll('.card');
+let currentlyChecked = document.querySelector('input[type="radio"]:checked');
 
-icons.forEach(icon => {
+cards.forEach(card => {
+    const input = card.previousElementSibling;
+    const icon = card.querySelector('.icon');
     const p = icon.querySelector('p');
-    let timeout;
 
-    icon.addEventListener('mouseenter', () => {
-        const card = icon.closest('.card');
-        const input = card.previousElementSibling;
+    // Armazena o texto original
+    if (!p.dataset.original) {
+        p.dataset.original = p.innerText;
+    }
 
+    // Estado inicial
+    if (input.checked) {
+        p.innerText = "Ver";
+    }
+    p.style.opacity = '1';
+
+    input.addEventListener('change', () => {
+        // Quando um novo card é selecionado
         if (input.checked) {
-            clearTimeout(timeout);
-            p.dataset.original = p.innerText;
+            // Animação para esconder o texto atual
             p.style.opacity = '0';
-
-            timeout = setTimeout(() => {
-                p.innerText = "Ler";
+            
+            setTimeout(() => {
+                p.innerText = "Ver";
                 p.style.opacity = '1';
-            }, 200);
+            }, 500);
+            
+            // Restaura o card anterior (se houver)
+            if (currentlyChecked && currentlyChecked !== input) {
+                const previousCard = currentlyChecked.nextElementSibling;
+                const previousP = previousCard.querySelector('.icon p');
+                
+                previousP.style.opacity = '0';
+                setTimeout(() => {
+                    previousP.innerText = previousP.dataset.original;
+                    previousP.style.opacity = '1';
+                }, 500);
+            }
+            
+            currentlyChecked = input;
         }
     });
 
+    // Clique → abre URL
     icon.addEventListener('click', () => {
-        if (p.innerText === "Ler") {
+        if (input.checked && p.innerText === "Ver") {
             const url = icon.dataset.url;
             window.open(url, '_blank');
-        }
-    });
-
-    icon.addEventListener('mouseleave', () => {
-        const card = icon.closest('.card');
-        const input = card.previousElementSibling;
-
-        if (input.checked) {
-            clearTimeout(timeout);
-            p.style.opacity = '0';
-
-            timeout = setTimeout(() => {
-                p.innerText = p.dataset.original;
-                p.style.opacity = '1';
-            }, 200);
         }
     });
 });
