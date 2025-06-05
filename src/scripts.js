@@ -5,23 +5,33 @@ icons.forEach(icon => {
     let timeout;
 
     icon.addEventListener('mouseenter', () => {
-        clearTimeout(timeout);
-        p.dataset.original = p.innerText;
-        p.style.opacity = '0';
+        const card = icon.closest('.card');
+        const input = card.previousElementSibling;
 
-        timeout = setTimeout(() => {
-            p.innerText = "Ler";
-            p.style.opacity = '1';
-        }, 200);
+        if (input.checked) {
+            clearTimeout(timeout);
+            p.dataset.original = p.innerText;
+            p.style.opacity = '0';
+
+            timeout = setTimeout(() => {
+                p.innerText = "Ler";
+                p.style.opacity = '1';
+            }, 300);
+        }
     });
 
     icon.addEventListener('mouseleave', () => {
-        clearTimeout(timeout);
-        p.style.opacity = '0';
+        const card = icon.closest('.card');
+        const input = card.previousElementSibling;
 
-        timeout = setTimeout(() => {
-            p.innerText = p.dataset.original;
-            p.style.opacity = '1';
-        }, 200);
+        if (input.checked) {
+            clearTimeout(timeout);
+            p.style.opacity = '0';
+
+            timeout = setTimeout(() => {
+                p.innerText = p.dataset.original;
+                p.style.opacity = '1';
+            }, 300);
+        }
     });
 });
