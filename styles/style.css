@@ -1,0 +1,284 @@
+/*---- GLOBAL STYLE ----*/
+body {
+    background-color: #000;
+    color: whitesmoke;
+    font-family: "Monaco", monospace;
+    margin: 10px;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+input{
+    display: none;
+}
+
+p {
+    font-size: 20px;
+    text-align: justify;
+}
+
+button{
+    background-color: black;
+    color: rgba(128,0,128);
+    border: 3px solid rgba(128,0,128);
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+    font-size: 20px;
+    transition: 1s;   
+}
+button:hover{
+    background-color: rgb(208, 64, 208);
+    color: black;
+    border: 3px solid rgba(208,64,208);
+    box-shadow: 0px 0px 16px rgb(208, 64, 208);
+    transform: scale(1.05);
+}
+
+/*---- ABOUT ME STYLE ----*/
+
+.about_me {
+    margin-top: 10vh;
+    display: flex;
+    width: 80vw;
+    justify-self: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.about_me img{
+    width: 500px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 16px rgba(128,0,128);
+    transition: 2s;
+}
+
+.about_me img:hover{
+    transform: scale(1.05);
+    box-shadow: 10px 10px 16px rgb(208, 64, 208);
+
+}
+
+.description_me{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.text_typing{
+    display: inline-block;
+    vertical-align: top;
+    color: rgba(128,0,128);
+    text-shadow: 2px 2px 10px rgba(128,0,128);
+    border-right: 3px solid;
+    width: 13ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 4s steps(13) alternate infinite,
+        cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor{
+    50%{
+        border-color: transparent;
+    }
+}
+
+@keyframes typing{
+    0%{
+        width: 0;
+    }
+    75%{
+        width: 13ch;
+    }
+}
+
+/*---- SKILLS STYLE ----*/
+
+.skills {
+    margin-top: 10vh;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+
+.icons_table{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    gap: 15px;
+    padding: 10px;
+    background-color: rgba(128,0,128, 0.5);
+}
+
+.half_table{
+    display: flex;
+    gap: 15px;
+}
+
+.skills img{
+    width: 80px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 20px;
+    display: block;
+}
+
+.icon_wrapper{
+    position: relative;
+    
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.icon_wrapper::after, .icon_wrapper::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;    
+    background-image: conic-gradient(from var(--angle),transparent 80%, rgb(232, 93, 232));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    opacity: 0;
+    padding: 4px;
+    border-radius: 20px;
+    animation: 2.5s spin linear infinite;
+    transition: 0.6s linear;
+}
+
+.icon_wrapper::before{
+    opacity: 0;
+}
+
+.icon_wrapper:hover::after {
+    opacity: 1;
+}
+
+.icon_wrapper:hover::before {
+    opacity: 0.5;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+/*---- PROJECTS STYLE ----*/
+
+.projects{
+    margin-top: 10vh;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}   
+
+.cards{
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.card{
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+    box-shadow: 0px 10px 30px rgba(104, 21, 104, 0.5);
+}
+
+.description{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.icon{
+    background: rgba(128,0,128, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.icon p{
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+
+.text p{
+    padding-top: 5px;
+}
+
+.text h4{
+    text-transform: uppercase;
+}
+
+input:checked + label{
+    width: 600px;
+}
+
+input:checked + label .text{
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card[for="card_1"]{
+    background-image: url(../assets/star_wreck.png);
+}
+
+.card[for="card_2"]{
+    background-image: url(../assets/star_wreck.png);    
+}
+
+.card[for="card_3"]{
+    background-image: url(../assets/star_wreck.png);
+}
+
+.card[for="card_4"]{
+    background-image: url(../assets/star_wreck.png);
+}
