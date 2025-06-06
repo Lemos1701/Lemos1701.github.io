@@ -1,3 +1,4 @@
+//Tornando os cards interativos 
 const cards = document.querySelectorAll('.card');
 let currentlyChecked = document.querySelector('input[type="radio"]:checked');
 
@@ -50,5 +51,17 @@ cards.forEach(card => {
             const url = icon.dataset.url;
             window.open(url, '_blank');
         }
+    });
+});
+
+// Funcionalidade do botão de contato
+
+let button = document.getElementById('button_contact');
+let footer = document.querySelector('.footer');
+
+button.addEventListener('click', () => {
+    window.scrollTo({
+        top: footer.offsetTop,
+        behavior: "smooth"
     });
 });

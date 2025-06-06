@@ -187,9 +187,9 @@ button:hover{
 
 .projects{
     margin-top: 10vh;
-    margin-bottom: 10vh;
     gap: 50px;
     display: flex;
+    height: 100vh;
     flex-direction: column;
     justify-self: center;
     align-items: center;
@@ -260,7 +260,7 @@ button:hover{
 }
 
 input:checked + label{
-    width: 600px;
+    width: 800px;
 }
 
 input:checked + label .text{
