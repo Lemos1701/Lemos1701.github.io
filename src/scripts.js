@@ -7,21 +7,20 @@ cards.forEach(card => {
     const icon = card.querySelector('.icon');
     const p = icon.querySelector('p');
 
-    // Armazena o texto original
+    // Guardo o numero do indice em questão
     if (!p.dataset.original) {
         p.dataset.original = p.innerText;
     }
 
-    // Estado inicial
+    // Para corrigir o caso base
     if (input.checked) {
         p.innerText = "Ver";
     }
     p.style.opacity = '1';
 
     input.addEventListener('change', () => {
-        // Quando um novo card é selecionado
         if (input.checked) {
-            // Animação para esconder o texto atual
+
             p.style.opacity = '0';
             
             setTimeout(() => {
@@ -29,7 +28,7 @@ cards.forEach(card => {
                 p.style.opacity = '1';
             }, 500);
             
-            // Restaura o card anterior (se houver)
+            // Volta o numero do card anterior
             if (currentlyChecked && currentlyChecked !== input) {
                 const previousCard = currentlyChecked.nextElementSibling;
                 const previousP = previousCard.querySelector('.icon p');
@@ -45,7 +44,6 @@ cards.forEach(card => {
         }
     });
 
-    // Clique → abre URL
     card.addEventListener('click', () => {
         if (input.checked && p.innerText === "Ver") {
             const url = icon.dataset.url;
@@ -55,7 +53,6 @@ cards.forEach(card => {
 });
 
 // Funcionalidade do botão de contato
-
 let button = document.getElementById('button_contact');
 let footer = document.querySelector('.footer');
 
@@ -67,7 +64,6 @@ button.addEventListener('click', () => {
 });
 
 // Funcionalidade dos botões do menu do footer
-
 let button_about = document.getElementById('about_me_button');
 let about = document.querySelector('.about_me');
 let button_skills = document.getElementById('skills_button');
@@ -93,5 +89,15 @@ button_projects.addEventListener('click', ()=>{
     window.scrollTo({
         top: project.offsetTop,
         behavior: "smooth"
+    });
+});
+
+// Animação de clicar na imgens de habilidades
+const images = document.querySelectorAll('.dynamic_shadows');
+
+images.forEach(image => {
+    image.addEventListener('click', ()=>{
+        const skill_name = image.previousElementSibling;
+        skill_name.classList.toggle('animate');
     });
 });
