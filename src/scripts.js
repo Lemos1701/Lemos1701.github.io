@@ -94,10 +94,31 @@ button_projects.addEventListener('click', ()=>{
 
 // Animação de clicar na imgens de habilidades
 const images = document.querySelectorAll('.dynamic_shadows');
+let vet = [false, false, false, false, false, false, false, false];
+let open = false;
+let last_clicked;
 
 images.forEach(image => {
     image.addEventListener('click', ()=>{
-        const skill_name = image.previousElementSibling;
-        skill_name.classList.toggle('animate');
+        for(let i = 0; i < 8; i++){
+            if(vet[i]){
+                open = true;
+            }
+        }
+        if(!open){
+            const skill_name = image.previousElementSibling;
+            skill_name.classList.toggle('animate');
+            last_clicked = image;
+        }
+        if(open){
+            const last_skill = last_clicked.previousElementSibling;
+            last_skill.classList.toggle('animate');
+
+            const current_skill = image.previousElementSibling;
+            current_skill.classList.toggle('animate');
+
+            last_clicked = image;
+        }
+        vet[image.dataset.position] = !vet[image.dataset.position]
     });
 });
