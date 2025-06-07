@@ -65,3 +65,33 @@ button.addEventListener('click', () => {
         behavior: "smooth"
     });
 });
+
+// Funcionalidade dos botões do menu do footer
+
+let button_about = document.getElementById('about_me_button');
+let about = document.querySelector('.about_me');
+let button_skills = document.getElementById('skills_button');
+let skill = document.querySelector('.skills');
+let button_projects = document.getElementById('projects_button');
+let project = document.querySelector('.projects');
+
+button_about.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: about.offsetTop + parseInt(about.style.marginTop),
+        behavior: "smooth"
+    });
+});
+
+button_skills.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: skill.offsetTop,
+        behavior: "smooth"
+    });
+});
+
+button_projects.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: project.offsetTop,
+        behavior: "smooth"
+    });
+});
