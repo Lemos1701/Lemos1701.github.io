@@ -1,4 +1,5 @@
-/*---- GLOBAL STYLE ----*/
+/* ---------------- GLOBAL STYLE ---------------- */
+/* não tem necessidade de comentar essa parte. trivial */
 body {
     background-color: #000;
     color: whitesmoke;
@@ -42,7 +43,10 @@ button:hover{
     transform: scale(1.05);
 }
 
-/*---- ABOUT ME STYLE ----*/
+
+
+
+/* ---------------- ABOUT ME STYLE ---------------- */
 .about_me {
     margin-top: 10vh;
     display: flex;
@@ -71,7 +75,7 @@ button:hover{
     gap: 15px;
 }
 
-
+/* INICIO DA ESTILIZAÇÃO PARA O TYPING */
 .text_typing{
     display: inline-block;
     vertical-align: top;
@@ -86,12 +90,14 @@ button:hover{
         cursor .4s step-end infinite alternate;
 }
 
+/* cursor piscando do typing */
 @keyframes cursor{
     50%{
         border-color: transparent;
     }
 }
 
+/* typing de fato */
 @keyframes typing{
     0%{
         width: 0;
@@ -100,8 +106,12 @@ button:hover{
         width: 13ch;
     }
 }
+/* FIM DA ESTILIZAÇÃO PARA O TYPING */
 
-/*---- SKILLS STYLE ----*/
+
+
+
+/* ---------------- SKILLS STYLE ---------------- */
 .skills {
     margin-top: 10vh;
     gap: 50px;
@@ -133,10 +143,57 @@ button:hover{
     display: block;
 }
 
+/* INICIO ESTILIZAÇÃO PARA FAZER O EFEITO DE SONAR AO FAZER O HOVER */
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
 .icon_wrapper{
     position: relative;
 }
 
+.icon_wrapper::after, .icon_wrapper::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle),transparent 80%, rgb(232, 93, 232));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    opacity: 0;
+    padding: 4px;
+    border-radius: 20px;
+    animation: 2.5s spin linear infinite;
+    transition: 0.6s linear;
+}
+
+.icon_wrapper::before{
+    opacity: 0;
+}
+
+.icon_wrapper:hover::after {
+    opacity: 1;
+}
+
+.icon_wrapper:hover::before {
+    opacity: 0.5;
+}
+/* FIM ESTILIZAÇÃO PARA FAZER O EFEITO DE SONAR AO FAZER O HOVER */
+
+/* INICIO ESTILIZAÇÃO PARA AO CLICAR APARECER O NOME DA SKILL */
 .skill_name{
     position: absolute;
     background-color: rgb(62, 14, 62);
@@ -164,55 +221,16 @@ button:hover{
     }
 } 
 
+/*
+se for olhar o html essa animação não existe la, essa classe é a responsável por fazer a animação do pop_up.
+ao ler o js vc consegue perceber que estou colocando e retirando essa classe na div com o nome das skills.
+*/
 .animate {
     animation: pop_up 0.6s ease forwards;
 }
+/* FIM ESTILIZAÇÃO PARA AO CLICAR APARECER O NOME DA SKILL */
 
-@property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
-.icon_wrapper::after, .icon_wrapper::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;    
-    background-image: conic-gradient(from var(--angle),transparent 80%, rgb(232, 93, 232));
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    opacity: 0;
-    padding: 4px;
-    border-radius: 20px;
-    animation: 2.5s spin linear infinite;
-    transition: 0.6s linear;
-}
-
-.icon_wrapper::before{
-    opacity: 0;
-}
-
-.icon_wrapper:hover::after {
-    opacity: 1;
-}
-
-.icon_wrapper:hover::before {
-    opacity: 0.5;
-}
-
-@keyframes spin{
-    from{
-        --angle: 0deg;
-    }
-    to{
-        --angle: 360deg;
-    }
-}
-
-/*---- PROJECTS STYLE ----*/
+/* ---------------- PROJECTS STYLE ---------------- */
 .projects{
     margin-top: 10vh;
     gap: 50px;
@@ -241,6 +259,10 @@ button:hover{
     align-items: flex-end;
     transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
     box-shadow: 0px 10px 30px rgba(104, 21, 104, 0.5);
+}
+
+input:checked + label{
+    width: 800px;
 }
 
 .description{
@@ -285,10 +307,6 @@ button:hover{
     text-transform: uppercase;
 }
 
-input:checked + label{
-    width: 800px;
-}
-
 input:checked + label .text{
     opacity: 1 !important;
     transform: translateY(0) !important;
@@ -310,7 +328,8 @@ input:checked + label .text{
     background-image: url(../assets/pong.png.jpg);
 }
 
-/*---- FOOTER STYLE ----*/
+/* ---------------- FOOTER STYLE ---------------- */
+/* não tem necessidade de comentar essa parte. trivial */
 .footer {
     margin-top: 12vh;
     border-top: 2px solid rgba(104, 21, 104, 0.5);
