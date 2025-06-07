@@ -261,6 +261,11 @@ ao ler o js vc consegue perceber que estou colocando e retirando essa classe na 
     box-shadow: 0px 10px 30px rgba(104, 21, 104, 0.5);
 }
 
+.animated_card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 10px 30px rgba(208, 64, 208, 0.5);
+}
+
 input:checked + label{
     width: 800px;
 }

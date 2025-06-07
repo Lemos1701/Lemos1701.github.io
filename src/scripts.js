@@ -1,6 +1,6 @@
 //Tornando os cards interativos 
 const cards = document.querySelectorAll('.card');
-let currentlyChecked = document.querySelector('input[type="radio"]:checked');
+let currently_checked = document.querySelector('input[type="radio"]:checked');
 
 cards.forEach(card => {
     const input = card.previousElementSibling;
@@ -14,33 +14,35 @@ cards.forEach(card => {
 
     // Para corrigir o caso base
     if (input.checked) {
+        card.classList.remove('animated_card');
         p.innerText = "Ver";
     }
     p.style.opacity = '1';
 
     input.addEventListener('change', () => {
         if (input.checked) {
-
             p.style.opacity = '0';
             
             setTimeout(() => {
+                card.classList.remove('animated_card');
                 p.innerText = "Ver";
                 p.style.opacity = '1';
-            }, 500);
+            }, 200);
             
             // Volta o numero do card anterior
-            if (currentlyChecked && currentlyChecked !== input) {
-                const previousCard = currentlyChecked.nextElementSibling;
-                const previousP = previousCard.querySelector('.icon p');
-                
-                previousP.style.opacity = '0';
+            if (currently_checked && currently_checked !== input) {
+                const last_card = currently_checked.nextElementSibling;
+                const last_p = last_card.querySelector('.icon p');
+
+                last_card.classList.add('animated_card');
+                last_p.style.opacity = '0';
                 setTimeout(() => {
-                    previousP.innerText = previousP.dataset.original;
-                    previousP.style.opacity = '1';
-                }, 500);
+                    last_p.innerText = last_p.dataset.original;
+                    last_p.style.opacity = '1';
+                }, 200);
             }
             
-            currentlyChecked = input;
+            currently_checked = input;
         }
     });
 
@@ -92,7 +94,7 @@ button_projects.addEventListener('click', ()=>{
     });
 });
 
-// Animação de clicar na imgens de habilidades
+// Animação de clicar na imgens de habilidades e aparecer os nomes
 const images = document.querySelectorAll('.dynamic_shadows');
 let vet = [false, false, false, false, false, false, false, false];
 let last_clicked;
