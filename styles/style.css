@@ -25,6 +25,7 @@ p {
 }
 
 button{
+    cursor: pointer;
     background-color: black;
     color: rgba(128,0,128);
     border: 3px solid rgba(128,0,128);
@@ -135,63 +136,62 @@ button:hover{
     gap: 15px;
 }
 
-.skills img{
+/* INICIO ESTILIZAÇÃO PARA FAZER O EFEITO DE SONAR NEON AO FAZER O HOVER */
+.dynamic_shadows {
+    cursor: pointer;
     width: 80px;
     background-color: black;
     padding: 10px;
     border-radius: 20px;
     display: block;
+    position: relative;
 }
 
-/* INICIO ESTILIZAÇÃO PARA FAZER O EFEITO DE SONAR AO FAZER O HOVER */
-@property --angle{
+@property --angle {
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
 }
 
-@keyframes spin{
-    from{
+@keyframes spin {
+    from {
         --angle: 0deg;
     }
-    to{
+    to {
         --angle: 360deg;
     }
 }
 
-.icon_wrapper{
+.icon_wrapper {
     position: relative;
 }
 
-.icon_wrapper::after, .icon_wrapper::before{
+.icon_wrapper::before {
     content: '';
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: conic-gradient(from var(--angle),transparent 80%, rgb(232, 93, 232));
+    background-image: 
+        conic-gradient(
+            from var(--angle),
+            transparent,
+            rgb(232, 93, 232)
+        );
     top: 50%;
     left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
+    transform: translate(-50%, -50%);
     opacity: 0;
-    padding: 4px;
-    border-radius: 20px;
-    animation: 2.5s spin linear infinite;
-    transition: 0.6s linear;
-}
-
-.icon_wrapper::before{
-    opacity: 0;
-}
-
-.icon_wrapper:hover::after {
-    opacity: 1;
+    padding: 2px;
+    border-radius: 24px;
+    transition: opacity 0.3s ease;
+    animation: 1.75s spin linear infinite;
+    filter: blur(2px) drop-shadow(0 0 10px rgba(255, 20, 255, 0.9));
 }
 
 .icon_wrapper:hover::before {
-    opacity: 0.5;
+    opacity: .8;
 }
-/* FIM ESTILIZAÇÃO PARA FAZER O EFEITO DE SONAR AO FAZER O HOVER */
+/* FIM ESTILIZAÇÃO PARA FAZER O EFEITO DE SONAR NEON AO FAZER O HOVER */
 
 /* INICIO ESTILIZAÇÃO PARA AO CLICAR APARECER O NOME DA SKILL */
 .skill_name{
@@ -217,7 +217,7 @@ button:hover{
     100%{
         opacity: 1;
         transform: translateY(40%);
-        z-index: 1;
+        z-index: 3;
     }
 } 
 
