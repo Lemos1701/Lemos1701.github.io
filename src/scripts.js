@@ -116,3 +116,83 @@ images.forEach(image => {
         last_clicked = vet[i] ? image: null;
     });
 });
+
+//Js da header------------------------------------
+//scroll
+window.addEventListener('scroll', ()=> {
+  const header = document.querySelector('.header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+//Mudar a bandeira-------------------------------
+const flag = document.getElementById('flag');
+let language = 0;
+// 0 - BR
+// 1 - EUA
+
+flag.addEventListener('click', ()=>{
+    flag.style.opacity = 0;
+    setTimeout(() => {
+        if(language === 0){
+            flag.src = '/assets/br_flag_hover.png';
+            language = 1;
+        }
+        else if(language === 1){
+            flag.src = '/assets/eua_flag_hover.png'
+            language = 0;
+        }
+        flag.style.opacity = '1';
+    }, 200);
+});
+
+flag.addEventListener('mouseenter', ()=>{
+    setTimeout(() => {
+        if(language === 0){
+            flag.src = '/assets/eua_flag_hover.png';
+        }
+        else if(language === 1){
+            flag.src = '/assets/br_flag_hover.png'
+        }
+    }, 200);
+});
+
+flag.addEventListener('mouseleave', ()=>{
+    setTimeout(() => {
+        if(language === 0){
+            flag.src = '/assets/eua_flag.png';
+        }
+        else if(language === 1){
+            flag.src = '/assets/br_flag.png';
+        }
+    }, 200);
+});
+
+// Botões da header
+let header_button_about = document.getElementById('about_me_button_header');
+let header_button_skills = document.getElementById('skills_button_header');
+let header_button_projects = document.getElementById('projects_button_header');
+
+header_button_about.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: about.offsetTop + parseInt(about.style.marginTop),
+        behavior: "smooth"
+    });
+});
+
+header_button_skills.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: skill.offsetTop,
+        behavior: "smooth"
+    });
+});
+
+header_button_projects.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: project.offsetTop,
+        behavior: "smooth"
+    });
+});
