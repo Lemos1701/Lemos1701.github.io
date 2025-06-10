@@ -101,7 +101,6 @@ button:hover{
     transition: all 0.2s ease;
 }
 
-
 .language_change img {
     width: 6vh;
     height: auto;
@@ -154,7 +153,7 @@ button:hover{
 }
 
 /* INICIO DA ESTILIZAÇÃO PARA O TYPING */
-.text_typing{
+.text_typing_br{
     display: inline-block;
     vertical-align: top;
     color: rgba(128,0,128);
@@ -164,7 +163,7 @@ button:hover{
     white-space: nowrap;
     overflow: hidden;
     animation:
-        typing 4s steps(13) alternate infinite,
+        typing_br 4s steps(13) alternate infinite,
         cursor .4s step-end infinite alternate;
 }
 
@@ -176,12 +175,44 @@ button:hover{
 }
 
 /* typing de fato */
-@keyframes typing{
+@keyframes typing_br{
     0%{
         width: 0;
     }
     75%{
         width: 13ch;
+    }
+}
+
+/*mesma coisa só que pra en*/
+.text_typing_en{
+    display: inline-block;
+    vertical-align: top;
+    color: rgba(128,0,128);
+    text-shadow: 2px 2px 10px rgba(128,0,128);
+    border-right: 3px solid;
+    width: 9ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing_en 3.4s steps(9) alternate infinite,
+        cursor .4s step-end infinite alternate;
+}
+
+/* cursor piscando do typing */
+@keyframes cursor{
+    50%{
+        border-color: transparent;
+    }
+}
+
+/* typing de fato */
+@keyframes typing_en{
+    0%{
+        width: 0;
+    }
+    75%{
+        width: 9ch;
     }
 }
 /* FIM DA ESTILIZAÇÃO PARA O TYPING */

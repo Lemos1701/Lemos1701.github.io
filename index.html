@@ -12,9 +12,9 @@
 
     <div class="header">
         <div class="header_menu">
-            <button id="about_me_button_header">Sobre mim</button>
-            <button id="skills_button_header">Habilidades</button>
-            <button id="projects_button_header">Projetos</button>
+            <button id="about_me_button_header" data-translate="menu.about">Sobre mim</button>
+            <button id="skills_button_header" data-translate="menu.skills">Habilidades</button>
+            <button id="projects_button_header" data-translate="menu.projects">Projetos</button>
         </div>
         <div class="language_change">
             <img src="/assets/eua_flag.png" id="flag" data-url_en="/assets/eua_flag.png" data-url_hover_en="/assets/eua_flag_hover.png" data-url_br="/assets/br_flag.png" data-url_hover_br="/assets/br_flag_hover.png">
@@ -26,22 +26,22 @@
         <div class="description_me">
             <h1>Vitor Lemos</h1>
             <h2>
-                <span class="a">Sou</span>
-                <span class="text_typing">desenvolvedor</span>
+                <span class="a" data-translate="about.subtitle_part1">Sou</span>
+                <span class="text_typing_br const" data-translate="about.subtitle_part2">desenvolvedor</span>
             </h2>
-            <p>
+            <p data-translate="about.description">
                 Natural do Rio de Janeiro e atualmente moro em Niterói. Profissional da área de tecnologia com 20 anos e 
                 grande interesse em desenvolvimento de software, especialmente 
                 usando Python e focado em análise de dados. Já participei de projetos envolvendo jogos e websites, sempre 
                 buscando aliar rapidez e qualidade. Tenho facilidade para aprender, sou adaptável a diferentes contextos 
                 e gosto de trabalhar em equipe, contribuindo com responsabilidade e dedicação para alcançar bons resultados.
             </p>
-            <button id="button_contact">Contate-me</button>
+            <button id="button_contact" data-translate="about.contact_button">Contate-me</button>
         </div>
     </div>
 
     <div class="skills">
-        <h1>Habilidades</h1>
+        <h1 data-translate="skills.title">Habilidades</h1>
         
         <div class="icons_table">
             <div class="half_table">
@@ -84,7 +84,7 @@
     </div>
 
     <div class="projects">
-        <h1>Projetos</h1>
+        <h1 data-translate="projects.title">Projetos</h1>
 
         <div class="cards">
             <input type="radio" name="card" id="card_1" checked>
@@ -92,8 +92,8 @@
                 <div class="description">
                     <div class="icon" data-url="https://noidnoidnoid.itch.io/starwreck"><p>1</p></div>
                     <div class="text">
-                        <h3>StarWreck</h3>
-                        <p>Jogo ganhador da CTRL ALT Jam desenvolvido com a Unreal.</p>
+                        <h3 data-translate="projects.items.0.title">StarWreck</h3>
+                        <p data-translate="projects.items.0.description">Jogo ganhador da CTRL ALT Jam desenvolvido com a Unreal.</p>
                     </div>
                 </div>
             </label>
@@ -103,8 +103,8 @@
                 <div class="description">
                     <div class="icon" data-url="https://nab.uff.br"><p>2</p></div>
                     <div class="text">
-                        <h3>Site para o NAB</h3>
-                        <p>Site desenvolvido com WordPress para o NAB.</p>
+                        <h3 data-translate="projects.items.1.title">Site para o NAB</h3>
+                        <p data-translate="projects.items.1.description">Site desenvolvido com WordPress para o NAB.</p>
                     </div>
                 </div>
             </label>
@@ -116,8 +116,8 @@
                         <p>3</p>
                     </div>
                     <div class="text">
-                        <h3>Space Invaders</h3>
-                        <p>Jogo clássico desenvolvido em pyhton.</p>
+                        <h3 data-translate="projects.items.2.title">Space Invaders</h3>
+                        <p data-translate="projects.items.2.description">Jogo clássico desenvolvido em pyhton.</p>
                     </div>
                 </div>
             </label>
@@ -129,8 +129,8 @@
                         <p>4</p>
                     </div>
                     <div class="text">
-                        <h3>Pong</h3>
-                        <p>Jogo clássico desenvolvido em pyhton.</p>
+                        <h3 data-translate="projects.items.3.title">Pong</h3>
+                        <p data-translate="projects.items.3.description">Jogo clássico desenvolvido em pyhton.</p>
                     </div>
                 </div>
             </label>
@@ -141,14 +141,14 @@
     <div class="footer">
 
         <div class="contact">
-            <h4>Contato</h4>
+            <h4 data-translate="footer.contact_title">Contato</h4>
             <div class="menu_infos">
                 <p>
-                    <span class="colored">Email:</span>
+                    <span class="colored" data-translate="footer.email">Email:</span>
                     dev.vitor.lemos@gmail.com
                 </p>
                 <p>
-                    <span class="colored">Número:</span>
+                    <span class="colored" data-translate="footer.phone">Número:</span>
                     +55 21 99133-6868
                 </p>
             </div>
@@ -157,9 +157,9 @@
         <div class="menu">
             <h4>Menu</h4>
             <div class="menu_buttons">
-                <button id="about_me_button">Sobre mim</button>
-                <button id="skills_button">Habilidades</button>
-                <button id="projects_button">Projetos</button>
+                <button id="about_me_button" data-translate="menu.about">Sobre mim</button>
+                <button id="skills_button" data-translate="menu.skills">Habilidades</button>
+                <button id="projects_button" data-translate="menu.projects">Projetos</button>
             </div>
         </div>
         

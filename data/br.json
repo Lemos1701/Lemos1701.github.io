@@ -1,0 +1,44 @@
+{
+  "menu": {
+    "about": "Sobre mim",
+    "skills": "Habilidades",
+    "projects": "Projetos"
+  },
+  "about": {
+    "title": "Vitor Lemos",
+    "subtitle_part1": "Sou",
+    "subtitle_part2": "desenvolvedor",
+    "description": "Natural do Rio de Janeiro e atualmente moro em Niterói. Profissional da área de tecnologia com 20 anos e grande interesse em desenvolvimento de software, especialmente usando Python e focado em análise de dados. Já participei de projetos envolvendo jogos e websites, sempre buscando aliar rapidez e qualidade. Tenho facilidade para aprender, sou adaptável a diferentes contextos e gosto de trabalhar em equipe, contribuindo com responsabilidade e dedicação para alcançar bons resultados.",
+    "contact_button": "Contate-me"
+  },
+  "skills": {
+    "title": "Habilidades"
+  },
+  "projects": {
+    "title": "Projetos",
+    "items": [
+      {
+        "title": "StarWreck",
+        "description": "Jogo ganhador da CTRL ALT Jam desenvolvido com a Unreal."
+      },
+      {
+        "title": "Site para o NAB",
+        "description": "Site desenvolvido com WordPress para o NAB."
+      },
+      {
+        "title": "Space Invaders",
+        "description": "Jogo clássico desenvolvido em pyhton."
+      },
+      {
+        "title": "Pong",
+        "description": "Jogo clássico desenvolvido em pyhton."
+      }
+    ]
+  },
+  "footer": {
+    "contact_title": "Contato",
+    "email": "Email:",
+    "phone": "Número:",
+    "menu_title": "Menu"
+  }
+}

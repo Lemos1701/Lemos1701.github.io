@@ -128,8 +128,23 @@ window.addEventListener('scroll', ()=> {
   }
 });
 
-//Mudar a bandeira-------------------------------
+//Mudar a idioma-------------------------------
+function Translation(url) {
+    fetch(url).then(response => response.json()).then(translations => {
+        document.querySelectorAll("[data-translate]").forEach(element => {
+            const translation_path = element.getAttribute("data-translate").split(".");
+            let translatedText = translations;
+            translation_path.forEach(i => {
+                if (translatedText) translatedText = translatedText[i];
+            });
+            if (translatedText) element.innerText = translatedText;
+        });
+    })
+    .catch(error => console.error('Erro ao carregar tradução:', error));
+}
+
 const flag = document.getElementById('flag');
+const typing = document.querySelector('.const');
 let language = 0;
 // 0 - BR
 // 1 - EUA
@@ -140,12 +155,19 @@ flag.addEventListener('click', ()=>{
         if(language === 0){
             flag.src = '/assets/br_flag_hover.png';
             language = 1;
+            flag.style.opacity = '1';
+            Translation('/data/en.json');
+            typing.classList.remove('text_typing_br');
+            typing.classList.add('text_typing_en');
         }
         else if(language === 1){
             flag.src = '/assets/eua_flag_hover.png'
             language = 0;
+            flag.style.opacity = '1';
+            Translation('/data/br.json');
+            typing.classList.remove('text_typing_en');
+            typing.classList.add('text_typing_br');
         }
-        flag.style.opacity = '1';
     }, 200);
 });
 
@@ -196,3 +218,5 @@ header_button_projects.addEventListener('click', ()=>{
         behavior: "smooth"
     });
 });
+
+//Mudar a lingua-------------------------------
