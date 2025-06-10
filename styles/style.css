@@ -199,14 +199,12 @@ button:hover{
         cursor .4s step-end infinite alternate;
 }
 
-/* cursor piscando do typing */
 @keyframes cursor{
     50%{
         border-color: transparent;
     }
 }
 
-/* typing de fato */
 @keyframes typing_en{
     0%{
         width: 0;
@@ -395,6 +393,7 @@ input:checked + label{
     justify-content: center;
     align-items: center;
     margin: 15px;
+     height: 50px;
 }
 
 .icon p{
@@ -403,20 +402,27 @@ input:checked + label{
 }
 
 .text{
+    background: rgba(128,0,128, 0.5);
+    padding: 2vh;
+    border-radius: 30vh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
+    align-self: center;
     justify-content: center;
     overflow: hidden;
-    height: 80px;
     width: 500px;
     opacity: 0;
-    transform: translateY(30px);
     transition-delay: .3s;
     transition: all .3s ease;
 }
 
 .text p{
-    padding-top: 5px;
+    font-size: 1rem;
+}
+
+.text h3{
+    font-size: 1.2rem;
 }
 
 .text h4{
