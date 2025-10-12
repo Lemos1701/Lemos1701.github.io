@@ -18,16 +18,16 @@
     "title": "Projects",
     "items": [
       {
+        "title": "Cryptocurrency Dashboard",
+        "description": "Python dashboard for cryptocurrency data analysis."
+      },
+      {
         "title": "StarWreck",
         "description": "Winner game of CTRL ALT Jam developed with Unreal."
       },
       {
         "title": "NAB Website",
         "description": "Website developed with WordPress for NAB."
-      },
-      {
-        "title": "Space Invaders",
-        "description": "Classic game developed in Python."
       },
       {
         "title": "Pong",
