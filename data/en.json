@@ -18,6 +18,10 @@
     "title": "Projects",
     "items": [
       {
+        "title": "Finance Control Dashboard",
+        "description": "Python dashboard for finance control."
+      },
+      {
         "title": "Cryptocurrency Dashboard",
         "description": "Python dashboard for cryptocurrency data analysis."
       },
@@ -28,10 +32,6 @@
       {
         "title": "NAB Website",
         "description": "Website developed with WordPress for NAB."
-      },
-      {
-        "title": "Pong",
-        "description": "Classic game developed in Python."
       }
     ]
   },

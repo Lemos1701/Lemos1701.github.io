@@ -435,19 +435,19 @@ input:checked + label .text{
 }
 
 .card[for="card_1"]{
-    background-image: url(../assets/dashboard.png);
+    background-image: url(../assets/overview_1.png);
 }
 
 .card[for="card_2"]{
-    background-image: url(../assets/star_wreck.png);
+    background-image: url(../assets/dashboard.png);
 }
 
 .card[for="card_3"]{
-    background-image: url(../assets/site_nab.png);    
+    background-image: url(../assets/star_wreck.png);
 }
 
 .card[for="card_4"]{
-    background-image: url(../assets/pong.png.jpg);
+    background-image: url(../assets/site_nab.png);
 }
 
 
